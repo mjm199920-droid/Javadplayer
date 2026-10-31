@@ -152,7 +152,8 @@ class MainActivity : AppCompatActivity() {
             status.text = "در حال پخش: $name"
             try {
                 equalizer?.release()
-                val sessionId = MusicService.currentAudioSessionId\n                if (sessionId > 0) equalizer = Equalizer(0, sessionId).apply { enabled = true }
+                val sessionId = MusicService.currentAudioSessionId
+                if (sessionId > 0) equalizer = Equalizer(0, sessionId).apply { enabled = true }
             } catch (_: Exception) { }
         } ?: run { status.text = "در حال اتصال به سرویس پخش..." }
     }
